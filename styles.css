@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+div#global{
+	margin: 15px;
+    border: 1px solid black;
+}
+
+div#header{
+	width: 800px;
+    margin: 0 auto;
+    height: 200px;
+    border: 1px solid black;
+}
+
+div#main{
+	float left;
+    border: 1px solid black;
+}
+
+div#main > div#overview{
+
+}
+
+div#main > div#list{
+
+}
+
+div#side{
+	float left;
+    border: 1px solid black;
+}
+
+div#footer{
+    border: 1px solid black;
+}
+
+.button{
+    display:block;
+    width:150px;
+    line-height:50px;
+    text-align:center;
+    vertical-align:middle;
+    background:url('http://img11.hostingpics.net/pics/855839boutonnoir.png') no-repeat;
+    color:white;
+    text-decoration:none;
+}
+
+.button:hover {
+    background:url('http://img11.hostingpics.net/pics/988546boutonnoir2.png') no-repeat;
+}
