@@ -47,10 +47,10 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 }
 
 apple.addEventListener('click', function () { toggleVar('apple'); context.drawImage(this,100,100,100,100); });
-beer.addEventListener('click', function () { toggleVar('beer'); context.drawImage(this,100,100,100,100); });
-frame.addEventListener('click', function () { toggleVar('frame'); context.drawImage(this,100,100,100,100); });
-hand.addEventListener('click', function () { toggleVar('hand'); context.drawImage(this,100,100,100,100); });
-mask.addEventListener('click', function () { toggleVar('mask'); context.drawImage(this,0,0,200,200); });
+beer.addEventListener('click', function () { toggleVar('beer'); context.drawImage(this,200,200,100,120); });
+frame.addEventListener('click', function () { toggleVar('frame'); context.drawImage(this,0,0,426,320); });
+hand.addEventListener('click', function () { toggleVar('hand'); context.drawImage(this,275,100,150,120); });
+mask.addEventListener('click', function () { toggleVar('mask'); context.drawImage(this,100,0,140,200); });
 send.addEventListener('click', function (e) {
 	e.preventDefault();
 	var xhr = getHttpRequest();
@@ -80,6 +80,7 @@ send.addEventListener('click', function (e) {
 			}
 		}
 	}
+	// context.clearRect(0, 0, canvas.width, canvas.height);
 });
 
 document.getElementById("snap").addEventListener("click", function() {
