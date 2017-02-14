@@ -11,7 +11,7 @@ require_once 'process/users.php';
 </head>
 	<title>Formulaire d'inscription</title>
 <body>
-	<form id= "form" action="#" method="post">
+	<form id= "form" method="post">
         <label class="form_col" for="lastName">Nom :</label>
         <input name="lastName" id="lastName" type="text" />
         <span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
@@ -44,7 +44,7 @@ require_once 'process/users.php';
         <span class="form_col"></span>
         <br /><br />
 
-        <input type="submit" value="M'inscrire" /> <input type="reset" value="Réinitialiser le formulaire" />
+        <input type="submit" value="M'inscrire" name="send" /> <input type="reset" value="Réinitialiser le formulaire" />
         <br /><br />
 	</form>
 </body>
