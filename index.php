@@ -1,7 +1,6 @@
 <?php 
 	include_once "inc/global.php";
-	$sth = $dbh->prepare('SELECT * FROM `gallery` ORDER BY `id` DESC');
-	$sth->execute(array());
+	$sth = $dbh->query('SELECT * FROM `gallery` ORDER BY `id` DESC');
 	$photos = $sth->fetchAll();
 ?>
 <!DOCTYPE html>
@@ -48,20 +47,21 @@
 						   </label>
 						</div>
 						<div>
-							<span class="button" id="apply">Appliquer</span>
+							<span class="pic" id="clear">#nofilter</span>
 						</div>
 				</div>
 			</div>
 			<div class="main">
 				<h3>Publier une nouvelle photo</h3>
 				<div>
-					<video id="video" width="426" height="320" autoplay></video>
+					<canvas id="canvas" width="426" height="320" style="position: absolute;"></canvas>
+					<video id="video" width="426" height="320" autoplay controls></video>
 				</div>
 				<div>
 					<span class="button" id="snap">Prendre une photo</span>
 				</div>
 				<div>
-					<canvas id="canvas" width="426" height="320"></canvas>
+					<canvas id="canevase" width="426" height="320"></canvas>
 				</div>
 				<div>
 					<input id="send" class="button" type="submit" name="Publier" value="Publier">
@@ -85,4 +85,5 @@
 	</body>
 	<script type="text/javascript" src="js/ajax.js"></script>
 	<script type="text/javascript" src="js/camera.js"></script>
+
 </html>

@@ -70,6 +70,9 @@ a:hover{
 .pic{
     margin:10px;
 }
+.pic input{   
+    display : none;
+}
 .footer {
     padding : 5px;
     margin : 10px;
@@ -90,4 +93,7 @@ a:hover{
 
 .button a:hover {
     background:url('http://img11.hostingpics.net/pics/988546boutonnoir2.png') no-repeat;
+}
+.canvas{
+    margin-top: -320px;
 }

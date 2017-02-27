@@ -1,5 +1,7 @@
 var canvas = document.getElementById('canvas');
+var canvase = document.getElementById('canevase');
 var context = canvas.getContext('2d');
+var contexte = canvase.getContext('2d');
 var video = document.getElementById('video');
 
 var apple = document.querySelector("#apple");
@@ -9,6 +11,7 @@ var hand = document.querySelector("#hand");
 var mask = document.querySelector("#mask");
 var send = document.querySelector("#send");
 var result = document.querySelector("#result");
+var clear = document.querySelector("#clear");
 
 var appleSelected = false;
 var beerSelected = false;
@@ -17,18 +20,15 @@ var handSelected = false;
 var maskSelected = false;
 var border = "5px solid #E82C0C";
 
-// apple.addEventListener('click', function () { toggleVar('apple'); });
-// beer.addEventListener('click', function () { toggleVar('beer'); });
-// frame.addEventListener('click', function () { toggleVar('frame'); });
-// hand.addEventListener('click', function () { toggleVar('hand'); });
-// mask.addEventListener('click', function () { toggleVar('mask'); });
-
+var errBack = function () {
+	alert("Coucou! Tu veux voir ma planète");
+};
 
 if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 	navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
 		video.src = window.URL.createObjectURL(stream);
 		video.play();
-	});
+	}, errBack);
 } else if(navigator.getUserMedia) {
 	navigator.getUserMedia({ video: true }, function(stream) {
 		video.src = stream;
@@ -46,16 +46,45 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 	}, errBack);
 }
 
-apple.addEventListener('click', function () { toggleVar('apple'); context.drawImage(this,100,100,100,100); });
-beer.addEventListener('click', function () { toggleVar('beer'); context.drawImage(this,200,200,100,120); });
-frame.addEventListener('click', function () { toggleVar('frame'); context.drawImage(this,0,0,426,320); });
-hand.addEventListener('click', function () { toggleVar('hand'); context.drawImage(this,275,100,150,120); });
-mask.addEventListener('click', function () { toggleVar('mask'); context.drawImage(this,100,0,140,200); });
+apple.addEventListener('click', function () {
+	toggleVar('apple'); 
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.drawImage(this,100,100,100,100); 
+});
+
+beer.addEventListener('click', function () {
+	toggleVar('beer');
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.drawImage(this,200,200,100,120); 
+});
+
+frame.addEventListener('click', function () {
+	toggleVar('frame');
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.drawImage(this,0,0,426,320); 
+});
+
+hand.addEventListener('click', function () {
+	toggleVar('hand');
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.drawImage(this,275,100,150,120); 
+});
+
+mask.addEventListener('click', function () {
+	toggleVar('mask');
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	context.drawImage(this,100,0,140,200);
+});
+
+clear.addEventListener('click', function () {
+	context.clearRect(0, 0, canvas.width, canvas.height);
+});
+
 send.addEventListener('click', function (e) {
 	e.preventDefault();
 	var xhr = getHttpRequest();
 	var data = new FormData();
-	var URI = canvas.toDataURL();
+	var URI = canvase.toDataURL();
 	var new_div = "";
 	data.append("img", URI);
 	data.append("post_photo", 1);
@@ -80,11 +109,11 @@ send.addEventListener('click', function (e) {
 			}
 		}
 	}
-	// context.clearRect(0, 0, canvas.width, canvas.height);
 });
 
 document.getElementById("snap").addEventListener("click", function() {
-	context.drawImage(video, 0, 0, 426, 320);
+	contexte.drawImage(video, 0, 0, 426, 320);
+	contexte.drawImage(canvas, 0, 0, 426, 320);
 });
 
 function toggleVar(name) {
@@ -122,4 +151,3 @@ function toggleVar(name) {
 			break;
 	}
 }
-
