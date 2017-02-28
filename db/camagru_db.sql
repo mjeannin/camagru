@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS `camagru_db`;
 CREATE DATABASE `camagru_db`;
 USE `camagru_db`;
 

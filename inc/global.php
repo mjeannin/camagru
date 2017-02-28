@@ -10,3 +10,11 @@
 	} catch (PDOException $e) {
 	    die ('Connexion échouée : ' . $e->getMessage());
 	}
+
+	$user['connected'] = false;
+	if (isset($_SESSION['user_id']))
+	{
+		$user = ;
+		$user['connected'] = true;
+	}
+

@@ -72,8 +72,18 @@
 					<h3>Galerie</h3>
 					<div id="result"></div>
 					<?php foreach ($photos as $photo): ?>
-					<div class="pic">
-						<img src="<?= $photo['img'] ?>" alt="ex1" border="0" height="250">
+					<div class="">
+						<div>
+							<img src="<?= $photo['img'] ?>" alt="ex1" border="0" height="250">
+						</div>
+						<div>
+							<img src="img/empty_heart.png" alt="empty_heart" class="likeMe" data-photoid="<?= $photo['id'] ?>" height="20">
+						</div>
+						<div>
+							<form id="comm" method="post">
+								<input name="comment" id="comment" type="text" />
+							</form>
+						</div>
 					</div>
 					<?php endforeach; ?>
 				</div>
@@ -85,5 +95,7 @@
 	</body>
 	<script type="text/javascript" src="js/ajax.js"></script>
 	<script type="text/javascript" src="js/camera.js"></script>
+	<script type="text/javascript" src="js/interactions.js"></script>
+	</script>
 
 </html>

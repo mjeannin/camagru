@@ -1,3 +1,4 @@
+#! /usr/bin/php
 <?php
 	$DB_DSN = 'mysql:;host=localhost';
 	$DB_USER = 'root';
@@ -15,6 +16,6 @@
 	{
 		$line = trim($line);
 		if (empty($line)) continue;
-		var_dump($line);
 		$dbh->query(trim($line));
 	}
+	echo "Database created\n";

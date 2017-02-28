@@ -22,7 +22,7 @@ require_once 'process/users.php';
         <span class="tooltip">Un prénom ne peut pas faire moins de 2 caractères</span>
         <br /><br />
 	    
-	    <label class="form_col" for="login">Pseudo :</label>
+	<label class="form_col" for="login">Pseudo :</label>
         <input name="login" id="pseudo" type="text" />
         <span class="tooltip">Le pseudo ne peut pas faire moins de 4 caractères</span>
         <br /><br />
