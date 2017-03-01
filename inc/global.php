@@ -14,7 +14,8 @@
 	$user['connected'] = false;
 	if (isset($_SESSION['user_id']))
 	{
-		$user = ;
+		$tmp = $dbh->query('SELECT * FROM `users` ORDER BY `id` DESC');
+		$user = $tmp->fetchAll();
 		$user['connected'] = true;
 	}
 

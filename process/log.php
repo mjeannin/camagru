@@ -2,7 +2,7 @@
 
 // Hachage du mot de passe
 
-$pass_hache = sha1($_POST['pass']);
+$pass_hache = md5($_POST['pass']);
 
 
 // Vérification des identifiants
