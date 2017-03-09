@@ -1,6 +1,6 @@
 <?php
-require_once 'inc/global.php';
-require_once 'process/users.php';
+require_once '../inc/global.php';
+require_once '../process/users.php';
 ?>
 
 <html lang="fr">

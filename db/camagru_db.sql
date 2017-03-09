@@ -17,6 +17,13 @@ CREATE TABLE `users` (
   `date_inscription` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE `social` (
+  `user_id` varchar(255) NOT NULL,
+  `img_id` longtext NOT NULL,
+  `liked` int(11) NOT NULL,
+  `text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
