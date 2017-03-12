@@ -1,5 +1,5 @@
 <?php
-require_once 'inc/global.php';
+require_once '../inc/global.php';
 ?>
 
 <html lang="fr">
@@ -44,7 +44,7 @@ require_once 'inc/global.php';
                 <div class="form_input">
                         Pas encore de compte ?
                         <div>
-                                <a href="pages/register.php">S'inscrire</a>
+                                <a href="register.php">S'inscrire</a>
                         </div>
                 </div>
         </div>

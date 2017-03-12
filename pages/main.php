@@ -70,13 +70,22 @@ require_once '../inc/global.php';
 				<div class="gallery">
 					<h3>Galerie</h3>
 					<div id="result"></div>
-					<?php foreach ($photos as $photo): ?>
+					<?php
+
+						$req = $dbh->prepare('SELECT img, authorid FROM gallery');
+
+						$req->execute(array(
+						    'img' => $photos,
+						    'authorid' => $author));
+
+						while ($photos = $req->fetch()){
+							?>
 					<div class="">
 						<div>
-							<img src="<?= $photo['img'] ?>" alt="ex1" border="0" height="250">
+							<img src="<?= $photos['img'] ?>" alt="ex1" border="0" height="250">
 						</div>
 						<div>
-							<img src="/Camagru/img/empty_heart.png" alt="empty_heart" class="likeMe" data-photoid="<?= $photo['id'] ?>" height="20">
+							<img src="/Camagru/img/empty_heart.png" alt="empty_heart" class="likeMe" data-photoid="<?= $photos['id'] ?>" height="20">
 						</div>
 						<div>
 							<form id="comm" method="post">
@@ -84,7 +93,7 @@ require_once '../inc/global.php';
 							</form>
 						</div>
 					</div>
-					<?php endforeach; ?>
+					<?php }?>
 				</div>
 			</div>
 		</div>

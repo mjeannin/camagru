@@ -65,7 +65,9 @@ a:hover{
     display: flex;
 }
 .gallery{
+    max-height: 1000px;
     margin: 10px;
+    overflow-y: scroll;
 }
 .pic{
     margin:10px;
