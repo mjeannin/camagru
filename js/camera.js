@@ -21,7 +21,7 @@ var maskSelected = false;
 var border = "5px solid #E82C0C";
 
 var errBack = function () {
-	alert("Coucou! Tu veux voir ma planète");
+	alert("Error");
 };
 
 if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
