@@ -5,10 +5,7 @@
   <div class="name">Camagru</div>
   <div class="log">
       <span>
-        <p><a href="register.php">S'inscrire</a></p>
-      </span>
-      <span>
-        <p><a href="login.php">Se connecter</a></p>
+        <p><a href="unlog.php">Déconnexion</a></p>
       </span>
   </div>
 <?php endif; ?>

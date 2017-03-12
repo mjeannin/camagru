@@ -11,6 +11,8 @@ CREATE TABLE `gallery` (
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `validation` boolean NOT NULL DEFAULT 0,
+  `token` varchar(255) NOT NULL,
   `pseudo` varchar(255) NOT NULL,
   `pass` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,

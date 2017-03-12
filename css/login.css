@@ -1,0 +1,28 @@
+*{
+    font-family: 'proxima-nova','Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+
+body{
+    color : black;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+#login_form{
+	position: relative;
+    margin:auto;
+    height: auto;
+    width:300px;
+    background-color: white;
+	text-align: center;
+	border:solid black 1px;
+}
+
+.form_input
+{
+        position: relative;
+        margin:auto;
+        height: auto;
+        width:300px;
+        padding: 12px;
+}

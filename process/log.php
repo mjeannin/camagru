@@ -1,5 +1,6 @@
 <?php 
-	if(isset($_POST['submit'])){
+	require_once '../inc/global.php';
+		if(isset($_POST['submit'])){
 		if(empty($_POST['login'])){
 			$errors[] = "Veuillez saisir votre pseudo";
 		}
