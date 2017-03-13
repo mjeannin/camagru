@@ -26,5 +26,9 @@
 
 		$resultat = $req->execute();
 
-		echo 'Enregistrement confirmé !';
+		header("Refresh: 5;URL=main.php");
+
+		echo 'Enregistrement confirmé !'
+		echo 'Vous allez être redirigé dans quelques secondes.';
 	}
+

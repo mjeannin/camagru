@@ -6,7 +6,7 @@ require_once '../process/users.php';
 <html lang="fr">
 <head>
 	<meta charset="utf-8" ?>
-	<link rel="stylesheet" type="text/css" href="css/form.css">
+	<link rel="stylesheet" type="text/css" href="../css/register.css">
 	<title>Camagru</title>
 </head>
 	<title>Formulaire d'inscription</title>
@@ -48,5 +48,5 @@ require_once '../process/users.php';
         <br /><br />
 	</form>
 </body>
-<script type="text/javascript" src="js/register.js"></script>
+<script type="text/javascript" src="../js/register.js"></script>
 </html>

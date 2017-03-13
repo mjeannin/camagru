@@ -60,7 +60,9 @@ if ($_POST['send'])
 			Ceci est un mail automatique, Merci de ne pas y répondre.';
 			 
 			 
-			mail($destinataire, $sujet, $message, $entete) ;			 
+			mail($destinataire, $sujet, $message, $entete) ;
+
+			echo "Veuillez valider votre adresse email.";			 
 		}
 	}
 	else
