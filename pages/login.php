@@ -1,11 +1,11 @@
 <?php
-        require_once 'inc/global.php';
+        require_once '../inc/global.php';
 ?>
 
 <html lang="fr">
 <head>
 	<meta charset="utf-8" ?>
-	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="../css/login.css">
         <title>Formulaire de connexion</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
         </div>
         <div id="login_form">
                 <div>
-                	<form id= "form" action="process/log.php" method="post">
+                	<form id= "form" action="../process/log.php" method="post">
                                 <div class="form_input">
                         	        <label class="form_col" for="login">
                                                 Pseudo :
@@ -44,7 +44,7 @@
                 <div class="form_input">
                         Pas encore de compte ?
                         <div>
-                                <a href="pages/register.php">S'inscrire</a>
+                                <a href="/Camagru/pages/register.php">S'inscrire</a>
                         </div>
                 </div>
         </div>

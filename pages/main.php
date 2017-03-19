@@ -68,11 +68,11 @@ require_once '../inc/global.php';
 			</div>
 			<div class="side">
 				<div class="gallery">
-					<h3>Galerie</h3>
+					<h3>Mes photos</h3>
 					<div id="result"></div>
 					<?php
 
-						$req = $dbh->prepare('SELECT img, authorid FROM gallery');
+						$req = $dbh->prepare('SELECT img, authorid FROM gallery WHERE id = :id');
 
 						$req->execute(array(
 						    'img' => $photos,
@@ -83,14 +83,6 @@ require_once '../inc/global.php';
 					<div class="">
 						<div>
 							<img src="<?= $photos['img'] ?>" alt="ex1" border="0" height="250">
-						</div>
-						<div>
-							<img src="/Camagru/img/empty_heart.png" alt="empty_heart" class="likeMe" data-photoid="<?= $photos['id'] ?>" height="20">
-						</div>
-						<div>
-							<form id="comm" method="post">
-								<input name="comment" id="comment" type="text" />
-							</form>
 						</div>
 					</div>
 					<?php }?>
@@ -103,5 +95,4 @@ require_once '../inc/global.php';
 	</body>
 	<script type="text/javascript" src="/Camagru/js/ajax.js"></script>
 	<script type="text/javascript" src="/Camagru/js/camera.js"></script>
-	<script type="text/javascript" src="/Camagru/js/interactions.js"></script>
 </html>

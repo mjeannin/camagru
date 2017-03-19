@@ -18,4 +18,5 @@
 		if (empty($line)) continue;
 		$dbh->query(trim($line));
 	}
+
 	echo "Database created\n";

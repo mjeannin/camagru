@@ -7,23 +7,10 @@
 	$pages = scandir('pages');
 
 	if(!empty($page) && in_array($_GET['page'].".php",$pages)){
-		$content = 'pages/'.$_GET['page'].".php";
+		$redirecturl = "/Camagru/pages/" . $_GET['page'] . ".php" . "?page=1";
+		header("Location:" . $redirecturl);
 	}
-
 	else{
-		header("Location:index.php?page=login");
+		header("Location:/Camagru/pages/gallery.php?page=1");
 	}
 ?>
-
-<!DOCTYPE html>
-<html>
-	<head>
-	</head>
-	<body>
-		<div id='content'>
-			<?php
-				include($content);
-			?>
-		</div>
-	</body>
-</html>

@@ -53,7 +53,7 @@ if ($_POST['send'])
 			Pour activer votre compte, veuillez cliquer sur le lien ci-dessous
 			ou le copier/coller dans votre navigateur internet.
 			 
-			localhost:8080/Camagru/pages/activation.php?token='.urlencode($token).'
+			http://localhost:8080/Camagru/pages/activation.php?token='.urlencode($token).'
 			 
 			 
 			---------------
