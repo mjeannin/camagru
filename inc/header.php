@@ -3,6 +3,9 @@
     <a><img src="https://image.ibb.co/h1wigF/Screen_Shot_2017_02_06_at_9_59_41_PM.png" alt="logo" border="0" href="/Camagru/gallery.php"></a>
   </div>
   <div class="name">Camagru</div>
+  <div>
+    <p><a href="../pages/gallery.php">Galerie</a></p>
+  </div>
   <div class="log">
       <span>
         <p><a href="../pages/register.php">Inscription</a></p>

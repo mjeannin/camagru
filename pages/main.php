@@ -72,11 +72,10 @@ require_once '../inc/global.php';
 					<div id="result"></div>
 					<?php
 
-						$req = $dbh->prepare('SELECT img, authorid FROM gallery WHERE id = :id');
+						$req = $dbh->prepare('SELECT img, authorid FROM gallery WHERE authorid = :id');
 
 						$req->execute(array(
-						    'img' => $photos,
-						    'authorid' => $author));
+						    'id' => $_SESSION['id']));
 
 						while ($photos = $req->fetch()){
 							?>
