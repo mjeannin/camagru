@@ -8,6 +8,10 @@ body{
     text-align: center;
 }
 
+div{
+    border-radius: 4px;
+}
+
 a,
 a:visited{
     color: inherit;
@@ -26,6 +30,14 @@ a:hover{
     font-size: 2em;
     margin: 55px;
 }
+.gallery{
+    flex: 1;
+    max-height: 1000px;
+    overflow-y: scroll;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 35px;
+}
 .log{
     flex: 2;
     margin: 30px;
@@ -41,11 +53,6 @@ a:hover{
 
 .middle {
     display: flex;
-}
-.gallery{
-    max-height: 1000px;
-    margin: 10px;
-    overflow-y: scroll;
 }
 .pic{
     margin:10px;

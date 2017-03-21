@@ -8,6 +8,10 @@ body{
     text-align: center;
 }
 
+div{
+    border-radius: 4px;
+}
+
 a,
 a:visited{
     color: inherit;
@@ -37,10 +41,12 @@ a:hover{
     padding : 5px;
     margin : 10px;
     display : flex;
+    box-shadow: 1px 2px 7px gray;
 }
 .frame {
     background-color: white;
     border : 1px solid black;
+    box-shadow: 1px 2px 7px gray;
     padding : 5px;
     margin : 10px;
     flex : 1;
@@ -48,6 +54,7 @@ a:hover{
 .main {
     background-color: white;
     border : 1px solid black;
+    box-shadow: 1px 2px 7px gray;
     padding : 5px;
     margin : 10px;
     flex : 2;
@@ -56,6 +63,7 @@ a:hover{
 .side {
     background-color: white;
     border : 1px solid black;
+    box-shadow: 1px 2px 7px gray;
     padding : 5px;
     margin : 10px;
     flex : 1;
@@ -81,6 +89,7 @@ a:hover{
     text-align: right;
     font-size: 1em;
     font-family: monospace;
+    box-shadow: 1px 2px 7px gray;
 }
 .button a {
     display:block;
