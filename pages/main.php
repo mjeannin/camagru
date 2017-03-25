@@ -60,6 +60,11 @@ require_once '../inc/global.php';
 					<span class="button" id="snap">Prendre une photo</span>
 				</div>
 				<div>
+					<form method="post" action="/process/upload.php" enctype="multipart/form-data">
+						<input type="file" name="nom" />
+					</form>
+				</div>
+				<div>
 					<canvas id="canevase" width="426" height="320"></canvas>
 				</div>
 				<div>
