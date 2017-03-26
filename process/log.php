@@ -1,6 +1,6 @@
 <?php 
 	require_once '../inc/global.php';
-		if(isset($_POST['submit'])){
+	if(isset($_POST['submit'])){
 		if(empty($_POST['login'])){
 			$errors[] = "Veuillez saisir votre pseudo";
 		}
@@ -12,26 +12,20 @@
 				echo"<div class='error'>".$error."</div>";
 			}
 		}
-		$pass_hache = password_hash($_POST['pwd1'], PASSWORD_BCRYPT);
 
-		$req = $dbh->prepare('SELECT id FROM users WHERE pseudo = :pseudo AND pass = :pass');
+		$req = $dbh->prepare('SELECT id,pass FROM users WHERE pseudo = :pseudo');
 
-		$req->execute(array(
-		    'pseudo' => $login,
-		    'pass' => $pass_hache));
+		$req->execute(array('pseudo' => $_POST['login']));
 
-		$resultat = $req->fetch();
-
-		if (!$resultat)
-		{
+		$resultat = $req->fetch(PDO::FETCH_ASSOC);
+		
+		if (!$resultat || !password_verify($_POST['pwd1'],$resultat['pass'])){
 		    echo 'Erreur d\'identification';
 		}
 
 		else
 		{
-		    session_start();
-		    $_SESSION['id'] = $resultat['id'];
-		    $_SESSION['pseudo'] = $login;
+		    $_SESSION['user_id'] = $resultat['id'];
 		    echo 'Vous êtes connecté !';
 		}
 	}

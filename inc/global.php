@@ -14,8 +14,8 @@
 	$user['connected'] = false;
 	if (isset($_SESSION['user_id']))
 	{
-		$tmp = $dbh->query('SELECT * FROM `users` ORDER BY `id` DESC');
-		$user = $tmp->fetchAll();
+		$_SESSION['user_id'] = intval($_SESSION['user_id']);
+		$tmp = $dbh->query("SELECT * FROM `users` WHERE `id` = {$_SESSION['user_id']} ORDER BY `id` DESC");
+		$user = $tmp->fetch(PDO::FETCH_ASSOC);
 		$user['connected'] = true;
 	}
-

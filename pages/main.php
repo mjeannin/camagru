@@ -54,14 +54,15 @@ require_once '../inc/global.php';
 				<h3>Publier une nouvelle photo</h3>
 				<div>
 					<canvas id="canvas" width="426" height="320" style="position: absolute;"></canvas>
-					<video id="video" width="426" height="320" autoplay controls></video>
+					<video id="video" width="426" height="320" autoplay></video>
 				</div>
+
 				<div>
 					<span class="button" id="snap">Prendre une photo</span>
 				</div>
 				<div>
 					<form method="post" action="/process/upload.php" enctype="multipart/form-data">
-						<input type="file" name="nom" />
+						<input type="file" name="nom" id="upload_picture"/>
 					</form>
 				</div>
 				<div>

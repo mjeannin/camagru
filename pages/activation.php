@@ -15,9 +15,7 @@
 	}
 
 	else{
-		session_start();
-		$_SESSION['id'] = $resultat['id'];
-		$_SESSION['pseudo'] = $resultat['pseudo'];
+		$_SESSION['user_id'] = $resultat['id'];
 
 		$req = $dbh->prepare('UPDATE users SET validation=1 WHERE id = :id');
 
@@ -26,9 +24,9 @@
 
 		$resultat = $req->execute();
 
-		header("Refresh: 5;URL=main.php");
+		header("Refresh: 2;URL=main.php");
 
-		echo 'Enregistrement confirmé !';
+		echo 'Enregistrement confirmé !<br>';
 		echo 'Vous allez être redirigé dans quelques secondes.';
 	}
 

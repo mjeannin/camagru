@@ -53,14 +53,13 @@ require_once '../inc/global.php';
 				</div>
 			<?php }?>
 			<?php
-				$page = $_GET["page"] ? $_GET["page"] : 0;
+				$page = $_GET["page"] ? $_GET["page"] : 1;
 				$offset = $page * 4;
 
 				$req = $dbh->prepare('SELECT img, authorid FROM gallery LIMIT :offset, 4;');
 				$req->bindParam(':offset', $offset, PDO::PARAM_INT);
 				$req->execute();
 				$photos = $req->fetch();
-
 				if ($photos){?>
 					<div id="foll">
 						<p><a href="/Camagru/pages/gallery.php?page=<?php echo $page + 1; ?>">Page suivante</a></p>

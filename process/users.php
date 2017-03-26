@@ -18,8 +18,8 @@ if ($_POST['send'])
 		$lastName = $_POST['lastName'];
 		$firstName = $_POST['firstName'];
 		$email = $_POST['email'];
-		$pass = $_POST['pass'];
-		$pass2 = $_POST['pass2'];
+		$pass = $_POST['pwd1'];
+		$pass2 = $_POST['pwd2'];
 
 		if (!preg_match('/^\w{2,42}$/i', $lastName))
 			echo "Vérifier l'orthographe du nom.";
@@ -34,7 +34,7 @@ if ($_POST['send'])
 			echo "Les mots de passe ne correspondent pas.";
 
 		else{
-			$pass_hache = password_hash($_POST['pass'], PASSWORD_BCRYPT);
+			$pass_hache = password_hash($pass, PASSWORD_BCRYPT);
 			$email = $_POST['email'];
 			$login = $_POST['login'];
 			$token = bin2hex(random_bytes(42));
