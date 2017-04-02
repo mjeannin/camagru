@@ -108,3 +108,15 @@ a:hover{
 .canvas{
     margin-top: -320px;
 }
+.gallery_title{
+    max-height: 1000px;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 35px;
+}
+.new_post{
+    max-height: 1000px;
+    text-align: center;
+    font-size: 1.4em;
+    margin: 35px;
+}

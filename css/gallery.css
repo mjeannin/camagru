@@ -38,6 +38,18 @@ a:hover{
     font-size: 1.5em;
     margin: 35px;
 }
+.gallery_title{
+    max-height: 1000px;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 35px;
+}
+.new_post{
+    max-height: 1000px;
+    text-align: center;
+    font-size: 1.4em;
+    margin: 35px;
+}
 .log{
     flex: 2;
     margin: 30px;

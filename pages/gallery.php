@@ -28,6 +28,7 @@ require_once '../inc/global.php';
 			</div>
 			<div>
 				<img src="/Camagru/img/empty_heart.png" alt="empty_heart" class="likeMe" data-photoid="<?= $photos['id'] ?>" height="20">
+				<a href="/Camagru/process/action.php?t=0&id=<?= $id ?>">J'aime</a>
 			</div>
 			<div>
 				<form id="comm" method="post">
