@@ -20,6 +20,10 @@ require_once '../inc/global.php';
 				$req->bindParam(':offset', $offset, PDO::PARAM_INT);
 				$req->execute();
 
+				$likes = $dbh->prepare('SELECT id FROM gallery WHERE likes = ?');
+				$likes->execute(array($id));
+				$likes - $likes->rowCount();
+
 				while ($photos = $req->fetch()){
 			?>
 		<div>
@@ -29,6 +33,7 @@ require_once '../inc/global.php';
 			<div>
 				<img src="/Camagru/img/empty_heart.png" alt="empty_heart" class="likeMe" data-photoid="<?= $photos['id'] ?>" height="20">
 				<a href="/Camagru/process/action.php?t=0&id=<?= $id ?>">J'aime</a>
+				(<? $likes ?>)
 			</div>
 			<div>
 				<form id="comm" method="post">
