@@ -15,11 +15,17 @@
 	function like_photo($dbh, $user_id, $img_id){
 		$query = $dbh->prepare("INSERT INTO likes VALUES(?, ?, NULL)");
 		$query->execute(array($img_id, $user_id));
+
+		$increment = $dbh->prepare("UPDATE gallery SET likes = likes + 1 WHERE id = ?");
+		$increment->execute(array($img_id));
 	}
 
 	function unlike_photo($dbh, $user_id, $img_id){
 		$query = $dbh->prepare('DELETE FROM likes WHERE img_id = ? AND user_id = ?');
 		$query->execute(array($img_id, $user_id));
+
+		$decrement = $dbh->prepare("UPDATE gallery SET likes = likes - 1 WHERE id = ?");
+		$decrement->execute(array($img_id));
 	}
 
 	if(isset($_GET['t'], $_GET['id'])){
@@ -32,6 +38,8 @@
 		} else {
 			like_photo($dbh, $user_id, $getid);
 		}
+
+	header('Location: http://localhost:8080/Camagru/pages/gallery.php?id= '.$getid);
 
 	}else{
 		exit('Erreur');
