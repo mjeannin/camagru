@@ -16,13 +16,9 @@ require_once '../inc/global.php';
 				$page = $_GET["page"] ? $_GET["page"] - 1 : 0;
 				$offset = $page * 4;
 
-				$req = $dbh->prepare('SELECT img, authorid FROM gallery LIMIT :offset, 4;');
+				$req = $dbh->prepare('SELECT img, authorid, id FROM gallery LIMIT :offset, 4;');
 				$req->bindParam(':offset', $offset, PDO::PARAM_INT);
 				$req->execute();
-
-				$likes = $dbh->prepare('SELECT id FROM gallery WHERE likes = ?');
-				$likes->execute(array($id));
-				$likes - $likes->rowCount();
 
 				while ($photos = $req->fetch()){
 			?>
@@ -32,7 +28,7 @@ require_once '../inc/global.php';
 			</div>
 			<div>
 				<img src="/Camagru/img/empty_heart.png" alt="empty_heart" class="likeMe" data-photoid="<?= $photos['id'] ?>" height="20">
-				<a href="/Camagru/process/action.php?t=0&id=<?= $id ?>">J'aime</a>
+				<a href="/Camagru/process/action.php?t=0&id=<?= $photos['id'] ?>">J'aime</a>
 				(<? $likes ?>)
 			</div>
 			<div>
