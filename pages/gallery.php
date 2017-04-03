@@ -1,5 +1,6 @@
 <?php
 require_once '../inc/global.php';
+require_once '../process/likes.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +17,7 @@ require_once '../inc/global.php';
 				$page = $_GET["page"] ? $_GET["page"] - 1 : 0;
 				$offset = $page * 4;
 
-				$req = $dbh->prepare('SELECT img, authorid, id FROM gallery LIMIT :offset, 4;');
+				$req = $dbh->prepare('SELECT id, authorid, img, likes FROM gallery LIMIT :offset, 4;');
 				$req->bindParam(':offset', $offset, PDO::PARAM_INT);
 				$req->execute();
 
@@ -27,9 +28,12 @@ require_once '../inc/global.php';
 				<img src="<?= $photos['img'] ?>" alt="ex1" border="0" height="250">
 			</div>
 			<div>
-				<img src="/Camagru/img/empty_heart.png" alt="empty_heart" class="likeMe" data-photoid="<?= $photos['id'] ?>" height="20">
+				<img liked=<? if(photo_is_liked($dbh, $_SESSION['user_id'], $photos['id']) == true ){
+					echo"true";
+				} ?>
+				src="/Camagru/img/empty_heart.png" alt="empty_heart" class="likeMe" data-photoid="<?= $photos['id'] ?>" height="20">
 				<a href="/Camagru/process/action.php?t=0&id=<?= $photos['id'] ?>">J'aime</a>
-				(<? $likes ?>)
+				(<? echo ($photos['likes']) ?>)
 			</div>
 			<div>
 				<form id="comm" method="post">
