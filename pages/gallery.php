@@ -28,15 +28,18 @@ require_once '../process/likes.php';
 				<img src="<?= $photos['img'] ?>" alt="ex1" border="0" height="250">
 			</div>
 			<div>
-				<img liked=<? if(photo_is_liked($dbh, $_SESSION['user_id'], $photos['id']) == true ){
-					echo"true";
-				} ?>
-				src="/Camagru/img/empty_heart.png" alt="empty_heart" class="likeMe" data-photoid="<?= $photos['id'] ?>" height="20">
+				<img <?php if(photo_is_liked($dbh, $_SESSION['user_id'], $photos['id']) == true ){?>
+					src="/Camagru/img/full_heart.png"
+				<?php }
+				else{?>
+					src="/Camagru/img/empty_heart.png"
+					<?php }?>
+				 alt="heart" class="likeMe" data-photoid="<?= $photos['id'] ?>" height="20">
 				<a href="/Camagru/process/action.php?t=0&id=<?= $photos['id'] ?>">J'aime</a>
 				(<? echo ($photos['likes']) ?>)
 			</div>
 			<div>
-				<form id="comm" method="post">
+				<form id="comm" method="post" action="/Camagru/process/post.php?id=<?= $photos['id'] ?>?">
 				<input name="comment" id="comment" type="text" />
 				</form>
 			</div>
