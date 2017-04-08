@@ -14,21 +14,16 @@
 		}
 
 		$req = $dbh->prepare('SELECT id,pass FROM users WHERE pseudo = :pseudo');
-
 		$req->execute(array('pseudo' => $_POST['login']));
-
 		$resultat = $req->fetch(PDO::FETCH_ASSOC);
 		
 		if (!$resultat || !password_verify($_POST['pwd1'],$resultat['pass'])){
 		    echo 'Erreur d\'identification';
 		}
 
-		else
-		{
+		else {
 		    $_SESSION['user_id'] = $resultat['id'];
-
 		    header("Refresh: 2;URL=/Camagru/pages/gallery.php");
-
 		    echo 'Connexion en cours, veuillez patienter...';
 		}
 	}

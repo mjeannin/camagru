@@ -50,6 +50,24 @@ a:hover{
     font-size: 1.4em;
     margin: 35px;
 }
+.commentaires{
+    background-color: white;
+    max-height: 1000px;
+    text-align: center;
+    font-size: 1em;
+    margin: 35px;
+    border: solid grey 1px;
+}
+.navig{
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 36px;
+}
+.pic{
+    margin: 10px;
+    border: solid black 1px;
+}
 .log{
     flex: 2;
     margin: 30px;
