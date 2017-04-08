@@ -165,7 +165,9 @@ send.addEventListener('click', function (e) {
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4) {
 			if (xhr.status === 200) {
+				console.log(xhr.responseText);
 				data = JSON.parse(xhr.responseText);
+				console.log(data);
 				if (data.status == true) {
 					new_div += "<div class=\"pic\">" 
 					new_div += "<img src=\""+ URI +"\" alt=\"ex1\" border=\"0\" height=\"250\">";

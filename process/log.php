@@ -26,6 +26,9 @@
 		else
 		{
 		    $_SESSION['user_id'] = $resultat['id'];
-		    echo 'Vous êtes connecté !';
+
+		    header("Refresh: 2;URL=/Camagru/pages/gallery.php");
+
+		    echo 'Connexion en cours, veuillez patienter...';
 		}
 	}

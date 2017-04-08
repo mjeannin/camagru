@@ -7,8 +7,7 @@ CREATE TABLE `gallery` (
   `authorid` varchar(255) NOT NULL,
   `img` longtext NOT NULL,
   `time` date NOT NULL,
-  `likes` int(255) NOT NULL,
-  `like_id` int(255) NOT NULL
+  `likes` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `users` (
