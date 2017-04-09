@@ -7,9 +7,8 @@ require_once '../process/users.php';
 <head>
 	<meta charset="utf-8" ?>
 	<link rel="stylesheet" type="text/css" href="../css/register.css">
-	<title>Camagru</title>
-</head>
 	<title>Formulaire d'inscription</title>
+</head>
 <body>
 	<form id= "form" method="post">
         <label class="form_col" for="lastName">Nom :</label>

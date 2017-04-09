@@ -1,6 +1,7 @@
 <?php
 require_once '../inc/global.php';
 require_once '../process/likes.php';
+$_GET["page"] = intval($_GET["page"]);
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +25,12 @@ require_once '../process/likes.php';
 
 				if ($page >= 1 && $photos){?>
 				<div>
-					<p class="navig"><a href="/Camagru/pages/gallery.php?page=<?php echo $page; ?>">Page précédente</a></p>
+					<p class="navig" id="prev"><a href="/Camagru/pages/gallery.php?page=<?= $page; ?>">Page précédente</a></p>
 				</div>
 			<?php }?>
+			<div>
+				<p class="navig">Page <?= $page; ?></p>
+			</div>
 			<?php
 				$page = $_GET["page"] ? $_GET["page"] : 1;
 				$offset = $page * 4;
@@ -37,7 +41,7 @@ require_once '../process/likes.php';
 				$photos = $req->fetch();
 				if ($photos){?>
 					<div>
-						<p class="navig"><a href="/Camagru/pages/gallery.php?page=<?php echo $page + 1; ?>">Page suivante</a></p>
+						<p class="navig" id="next"><a href="/Camagru/pages/gallery.php?page=<?= $page + 1; ?>">Page suivante</a></p>
 					</div>
 			<?php }?>
 			<?php
@@ -84,11 +88,11 @@ require_once '../process/likes.php';
 					src="/Camagru/img/empty_heart.png"
 					<?php }?>
 				 alt="heart" class="likeMe" data-photoid="<?= $photos['id'] ?>" height="20">
-				<a href="/Camagru/process/action.php?t=0&id=<?= $photos['id'] ?>">J'aime</a>
-				(<? echo ($photos['likes']) ?>)
+				<a href="/Camagru/process/action.php?t=0&id=<?= $photos['id'] ?>&page=<?=  $_GET["page"] ; ?>">J'aime</a>
+				(<?= ($photos['likes']) ?>)
 			</div>
 			<div>
-				<form id="comm" method="post" data-photoid="<?= $photos['id'] ?>" action="/Camagru/process/post.php?id=<?= $photos['id'] ?>?">
+				<form id="comm" method="post" data-photoid="<?= $photos['id'] ?>" action="/Camagru/process/post.php?id=<?= $photos['id'] ?>&page=<?=  $_GET["page"] ; ?>">
 					<input name="comment" id="comment" type="text" />
 				</form>
 			</div>
@@ -98,13 +102,12 @@ require_once '../process/likes.php';
 
 					while ($commentaires = $cmt->fetch()){?>
 						<div class="commentaires">
-							<? echo ($commentaires['user_id']) ?> : <? echo ($commentaires['text']);
-							echo '<br/>';
-							echo ($commentaires['date']);
+							<?= ($commentaires['user_id']) ?> : <?= ($commentaires['text']).'<br/>'.($commentaires['date']); ?>
+							<?php
 							if ($commentaires['user_id'] == $_SESSION['user_id']){
 								echo '<br/>';?>
-									<a href="/Camagru/process/del.php?id=<?= $commentaires['comm_id'] ?>">Supprimer</a>
-								<? } ?>
+									<a href="/Camagru/process/del.php?id=<?= $commentaires['comm_id'] ?>&page=<?= $_GET["page"]; ?>">Supprimer</a>
+								<?php } ?>
 						</div>
 					<?php } ?>
 			</div>

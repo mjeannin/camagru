@@ -34,6 +34,14 @@ if ($_POST['send'])
 			echo "Les mots de passe ne correspondent pas.";
 
 		else{
+			$req = $dbh->prepare('SELECT email FROM users WHERE email = ?');
+			$req->execute(array($email));
+			$count = $req->rowCount();
+
+			if ($count > 0){
+		    	die ('Adresse email déjà utilisée');
+			}
+
 			$pass_hache = password_hash($pass, PASSWORD_BCRYPT);
 			$email = $_POST['email'];
 			$login = $_POST['login'];

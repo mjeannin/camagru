@@ -18,7 +18,12 @@
 				like_photo($dbh, $user_id, $getid);
 			}
 
-		header('Location: http://localhost:8080/Camagru/pages/gallery.php?id= '.$getid);
+		$url = "http://localhost:8080/Camagru/pages/gallery.php";
+		if(isset($_GET['page'])){
+			$url .= "?page={$_GET['page']}";
+		}
+		
+		header("Location: $url");
 
 		}else{
 			exit('Erreur');

@@ -18,11 +18,14 @@ body{
 	border:solid black 1px;
 }
 
-.form_input
-{
-        position: relative;
-        margin:auto;
-        height: auto;
-        width:300px;
-        padding: 12px;
+.form_input{
+    position: relative;
+    margin:auto;
+    height: auto;
+    width:300px;
+    padding: 12px;
+}
+
+#for_pwd{
+    margin:20px;
 }

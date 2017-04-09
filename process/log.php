@@ -1,8 +1,8 @@
 <?php 
 	require_once '../inc/global.php';
 	if(isset($_POST['submit'])){
-		if(empty($_POST['login'])){
-			$errors[] = "Veuillez saisir votre pseudo";
+		if(empty($_POST['mail'])){
+			$errors[] = "Veuillez saisir votre e-mail";
 		}
 		if(empty($_POST['pwd1'])){
 			$errors[] = "Veuillez saisir votre mot de passe";
@@ -13,8 +13,8 @@
 			}
 		}
 
-		$req = $dbh->prepare('SELECT id,pass FROM users WHERE pseudo = :pseudo');
-		$req->execute(array('pseudo' => $_POST['login']));
+		$req = $dbh->prepare('SELECT id,pass FROM users WHERE email = ?');
+		$req->execute(array($_POST['mail']));
 		$resultat = $req->fetch(PDO::FETCH_ASSOC);
 		
 		if (!$resultat || !password_verify($_POST['pwd1'],$resultat['pass'])){

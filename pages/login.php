@@ -5,7 +5,7 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8" ?>
-	<link rel="stylesheet" type="text/css" href="../css/login.css">
+	<link rel="stylesheet" type="text/css" href="/Camagru/css/login.css">
         <title>Formulaire de connexion</title>
 </head>
 <body>
@@ -16,12 +16,12 @@
         </div>
         <div id="login_form">
                 <div>
-                	<form id= "form" action="../process/log.php" method="post">
+                	<form id= "form" action="/Camagru/process/log.php" method="post">
                                 <div class="form_input">
-                        	        <label class="form_col" for="login">
-                                                Pseudo :
+                        	        <label class="form_col" for="mail">
+                                                Email :
                                         </label>
-                                        <input name="login" id="login" type="text"/>
+                                        <input name="mail" id="mail" type="text"/>
                                 </div>
                                 <div class="form_input">
                                         <label class="form_col" for="pwd1">
@@ -33,12 +33,14 @@
                                 <div class="form_input">
                                         <input type="submit" value="Connexion" name="submit"/>
                                 </div>
-
-                                <div class="form_input">
-                                        Mot de passe oublié?
-                                        <input type="submit" value="Envoyer un mail de récupération"/>
-                                </div>
                         </form>
+                </div>
+
+                <div class="form_input">
+                        Mot de passe oublié?
+                        <div>
+                                <a href="/Camagru/pages/forgotten_pwd.php">Envoyer un mail de récupération</a>
+                        </div>
                 </div>
 
                 <div class="form_input">

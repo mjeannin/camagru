@@ -19,12 +19,12 @@ var frameSelected = false;
 var handSelected = false;
 var maskSelected = false;
 var border = "5px solid #E82C0C";
-var caca = false;
+var stuff = false;
+var confirmed = false;
 
 var errBack = function () {
 	alert("Error");
 };
-
 
 HTMLCanvasElement.prototype.renderImage = function(blob){
   
@@ -63,10 +63,10 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 apple.addEventListener('click', function () {
 	toggleVar('apple'); 
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	if (caca != false)
+	if (stuff != false)
 	{
 		var img = new Image();
-		img.src = URL.createObjectURL(caca);
+		img.src = URL.createObjectURL(stuff);
 		var mythis = this;
 		img.onload = function(){
 		    context.drawImage(img, 0, 0)
@@ -81,10 +81,10 @@ apple.addEventListener('click', function () {
 beer.addEventListener('click', function () {
 	toggleVar('beer');
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	if (caca != false)
+	if (stuff != false)
 	{
 		var img = new Image();
-		img.src = URL.createObjectURL(caca);
+		img.src = URL.createObjectURL(stuff);
 		var mythis = this;
 		img.onload = function(){
 		    context.drawImage(img, 0, 0)
@@ -98,10 +98,10 @@ beer.addEventListener('click', function () {
 frame.addEventListener('click', function () {
 	toggleVar('frame');
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	if (caca != false)
+	if (stuff != false)
 	{
 		var img = new Image();
-		img.src = URL.createObjectURL(caca);
+		img.src = URL.createObjectURL(stuff);
 		var mythis = this;
 		img.onload = function(){
 		    context.drawImage(img, 0, 0)
@@ -115,10 +115,10 @@ frame.addEventListener('click', function () {
 hand.addEventListener('click', function () {
 	toggleVar('hand');
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	if (caca != false)
+	if (stuff != false)
 	{
 		var img = new Image();
-		img.src = URL.createObjectURL(caca);
+		img.src = URL.createObjectURL(stuff);
 		var mythis = this;
 		img.onload = function(){
 		    context.drawImage(img, 0, 0)
@@ -132,10 +132,10 @@ hand.addEventListener('click', function () {
 mask.addEventListener('click', function () {
 	toggleVar('mask');
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	if (caca != false)
+	if (stuff != false)
 	{
 		var img = new Image();
-		img.src = URL.createObjectURL(caca);
+		img.src = URL.createObjectURL(stuff);
 		var mythis = this;
 		img.onload = function(){
 		    context.drawImage(img, 0, 0)
@@ -152,6 +152,11 @@ clear.addEventListener('click', function () {
 
 send.addEventListener('click', function (e) {
 	e.preventDefault();
+	if (confirmed == false)
+	{
+		alert('Veuillez prendre une photo et sélectionner un filtre');
+		return ;
+	}
 	var xhr = getHttpRequest();
 	var data = new FormData();
 	var URI = canvase.toDataURL();
@@ -159,7 +164,7 @@ send.addEventListener('click', function (e) {
 	data.append("img", URI);
 	data.append("post_photo", 1);
 
-	xhr.open('POST', '/Camagru/process/aymeric.php', true);
+	xhr.open('POST', '/Camagru/process/publish.php', true);
 	xhr.setRequestHeader('X-Requested-With', 'xmlhttprequest');
 	xhr.send(data);
 	xhr.onreadystatechange = function () {
@@ -176,22 +181,29 @@ send.addEventListener('click', function (e) {
 				}
 				else
 					alert(data.message);
-			} else {
-				alert('Une erreur est survenue');
 			}
-		}
+			else
+				alert('Une erreur est survenue');
+		} 
 	}
 });
 
 document.getElementById("snap").addEventListener("click", function() {
+	if (!(appleSelected == true || beerSelected == true || frameSelected == true || handSelected == true || maskSelected == true))
+	{
+		alert('Choisissez au moins un filtre');
+		return;
+	}
+	else
+		confirmed = true;
 	contexte.drawImage(video, 0, 0, 426, 320);
 	contexte.drawImage(canvas, 0, 0, 426, 320);
 });
 
 document.querySelector("#upload_picture").addEventListener("change", function() {
 	if (this.files.length > 0) {
-		caca = this.files[0]
-       canvas.renderImage(caca);
+		stuff = this.files[0]
+       canvas.renderImage(stuff);
 	}
 });
 
@@ -229,4 +241,6 @@ function toggleVar(name) {
 			mask.style.border = border;
 			break;
 	}
+	confirmed = false;
 }
+

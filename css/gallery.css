@@ -59,10 +59,15 @@ a:hover{
     border: solid grey 1px;
 }
 .navig{
-    text-align: center;
     font-size: 1em;
     font-weight: bold;
     margin: 36px;
+}
+#prev{
+    text-align: left;
+}
+#next{
+    text-align: right;
 }
 .pic{
     margin: 10px;

@@ -8,13 +8,16 @@
 	
 	else{
 		if(isset($_GET['id'])){
-			$comm_id = (int) $_GET['id'];
+			$comm_id =  intval($_GET['id']);
 
 			delete_comment($dbh, $comm_id);
 
-		header('Location: http://localhost:8080/Camagru/pages/gallery.php?id= '.$getid);
-
-		}else{
-			exit('Erreur');
+		$url = "http://localhost:8080/Camagru/pages/gallery.php";
+		if(isset($_GET['page'])){
+			$url .= "?page={$_GET['page']}";
 		}
+		
+		header("Location: $url");
+
+		}else exit('Erreur');
 	}

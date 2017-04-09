@@ -31,8 +31,9 @@ CREATE TABLE `comm` (
   `user_id` int(11) NOT NULL,
   `img_id` int(11) NOT NULL,
   `text` varchar(255) NOT NULL,
-  `date` date NOT NULL
-);
+  `date` date NOT NULL,
+  PRIMARY KEY (`comm_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
