@@ -1,5 +1,21 @@
 <?php
-require_once '../inc/global.php';
+require_once "{$_SERVER['DOCUMENT_ROOT']}/Camagru/inc/global.php";
+
+if(isset($_GET['token'])){
+        $req = $dbh->prepare('SELECT id FROM tokens WHERE token = ?');
+        $req->execute(array($_GET['token']));
+        $count = $req->rowCount();
+
+        if ($count < 1){
+                die('Erreur');
+        }
+}
+
+else{
+        header("Location: http://localhost:8080/Camagru/pages/gallery.php");
+        exit;
+}
+
 ?>
 <html lang="fr">
 <head>
@@ -18,6 +34,8 @@ require_once '../inc/global.php';
         <input name="pwd2" id="pass2" type="password" />
         <span class="form_col"></span>
         <br /><br />
+
+        <input name="token" type="hidden" value="<?= $_GET['token']?>"/>
 
         <input type="submit" value="Enregistrer" name="send" />
         <br /><br />

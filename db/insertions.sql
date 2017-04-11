@@ -17,7 +17,4 @@ INSERT INTO `likes` (`img_id`, `user_id`, `likes_id`) VALUES
 (6,	3,	7);
 
 INSERT INTO `users` (`id`, `validation`, `token`, `pseudo`, `pass`, `email`, `date_inscription`) VALUES
-(1,	1,	'b2543abce8a222c086262a4dda237f0e92202169686566da487329fa9a420bfa95f6207336fb1781738d',	'mjeannin',	'$2y$10$0R4o..aUzZcCaONrf1Hue.wuLEm7dM6GqsAumret.1I.QXmc94B1u',	'marine.jeannin@sciencespo.fr',	'2017-03-25'),
-(2,	2,	'7d7cf70a8a2dd8ab6bacf8729bfe0fa1a7e239b03ea7b0037549c3672e8b7c5854abe8154114ff576c10',	'mjea',	'$2y$10$3yxKyxw891eiMkSq.liifOKkZRpS9RHQyO8RWBjkeEz7WhW7BAaxW',	'marine.jeannin@sciencespo.fr',	'2017-04-02'),
-(3,	1,	'19543e5c732443f7f0dc7aac3ee7cb8471b0d0827ce2280d2c9b1ab67a1f5cd7782bcd87bced628bac53',	'anothertest',	'$2y$10$AjQLmh640J67Bd5SjOKvcu5CEMmhS7jNMjdyLDSUqzoMAHHXB25tC',	'marine.jeannin@sciencespo.fr',	'2017-04-08');
-
+(1,	1,	'b2543abce8a222c086262a4dda237f0e92202169686566da487329fa9a420bfa95f6207336fb1781738d',	'mjeannin',	'$2y$10$0R4o..aUzZcCaONrf1Hue.wuLEm7dM6GqsAumret.1I.QXmc94B1u',	'marine.jeannin@sciencespo.fr',	'2017-03-25');
