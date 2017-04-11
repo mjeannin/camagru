@@ -8,11 +8,6 @@
 	if (!empty($_FILES))
 	{
 		var_dump($_FILES);
-		//$_FILES['nom']['name']    Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_nom.png).
-		// $_FILES['nom']['type'] ;    //Le type du fichier. Par exemple, cela peut être « image/png ».
-		// $_FILES['nom']['size'] ;    //La taille du fichier en octets.
-		// $_FILES['nom']['tmp_name']; //L'adresse vers le fichier uploadé dans le répertoire temporaire.
-		// $_FILES['nom']['error'] ;   //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
 
 		$extensions_valides = array( 'jpg' , 'jpeg' , 'png' );
 		$extension_upload = strtolower(  substr(  strrchr($_FILES['nom']['name'], '.')  ,1)  );

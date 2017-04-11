@@ -58,6 +58,9 @@ a:hover{
     margin: 35px;
     border: solid grey 1px;
 }
+#pagination{
+    width: 1392px;
+}
 .navig{
     font-size: 1em;
     font-weight: bold;
@@ -84,6 +87,7 @@ a:hover{
     padding : 5px;
     margin : 10px;
     display : flex;
+    width: 1392px;
 }
 
 .middle {
