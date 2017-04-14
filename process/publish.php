@@ -1,6 +1,6 @@
 <?php 
 
-	include_once '../inc/global.php';
+	require_once "{$_SERVER['DOCUMENT_ROOT']}/Camagru/inc/global.php";
 
 	$result = Array();
 	$result['status'] = false;

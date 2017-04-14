@@ -1,4 +1,5 @@
 <?php
+
 	include_once "{$_SERVER['DOCUMENT_ROOT']}/Camagru/inc/global.php";
 
 	$result = Array();

@@ -77,7 +77,7 @@ check['pwd2'] = function() {
 };
 
 (function() {
-    var myForm = document.getElementById('myForm'),
+    var myForm = document.getElementById('form'),
         inputs = document.querySelectorAll('input[type=text], input[type=password]'),
         inputsLength = inputs.length;
     for (var i = 0; i < inputsLength; i++) {

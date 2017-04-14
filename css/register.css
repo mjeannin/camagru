@@ -8,6 +8,22 @@ body{
     text-align: center;
 }
 
+#form{
+    position: relative;
+    margin:auto;
+    height: auto;
+    width:300px;
+    background-color: white;
+    text-align: center;
+    border:solid black 1px;
+}
+
+#main{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .login_form{
     position: relative;
     margin:auto;
@@ -24,7 +40,7 @@ body{
     padding: 3px 0px;
     width: 200px;
     min-height: 1px;
-    text-align: right;
+    text-align: left;
 }
 
 .form_input
@@ -67,11 +83,10 @@ input:focus {
     box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
 }
 
-.tooltip {
-    display: none;
-    margin-left: 20px;
-    padding: 2px 4px;
-    border: 1px solid #555;
-    background-color: #CCC;
-    border-radius: 4px;
+.footer {
+    padding : 5px;
+    margin : 10px;
+    text-align: right;
+    font-size: 1em;
+    font-family: monospace;
 }

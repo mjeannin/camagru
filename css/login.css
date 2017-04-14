@@ -8,6 +8,12 @@ body{
     text-align: center;
 }
 
+#main{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #login_form{
 	position: relative;
     margin:auto;
@@ -28,4 +34,12 @@ body{
 
 #for_pwd{
     margin:20px;
+}
+
+.footer {
+    padding : 5px;
+    margin : 10px;
+    text-align: right;
+    font-size: 1em;
+    font-family: monospace;
 }

@@ -1,5 +1,7 @@
 <?php 
-	require_once '../inc/global.php';
+
+	require_once "{$_SERVER['DOCUMENT_ROOT']}/Camagru/inc/global.php";
+	
 	if(isset($_POST['submit'])){
 		if(empty($_POST['mail'])){
 			$errors[] = "Veuillez saisir votre e-mail";

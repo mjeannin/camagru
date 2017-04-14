@@ -11,7 +11,6 @@ var hand = document.querySelector("#hand");
 var mask = document.querySelector("#mask");
 var send = document.querySelector("#send");
 var result = document.querySelector("#result");
-var clear = document.querySelector("#clear");
 
 var appleSelected = false;
 var beerSelected = false;
@@ -146,10 +145,6 @@ mask.addEventListener('click', function () {
 		context.drawImage(this,100,0,140,200); 
 });
 
-clear.addEventListener('click', function () {
-	context.clearRect(0, 0, canvas.width, canvas.height);
-});
-
 send.addEventListener('click', function (e) {
 	e.preventDefault();
 	if (confirmed == false)
@@ -188,17 +183,15 @@ send.addEventListener('click', function (e) {
 	}
 });
 
-document.getElementById("snap").addEventListener("click", function() {
-	if (!(appleSelected == true || beerSelected == true || frameSelected == true || handSelected == true || maskSelected == true))
-	{
-		alert('Choisissez au moins un filtre');
-		return;
-	}
-	else
+if (appleSelected == true || beerSelected == true || frameSelected == true || handSelected == true || maskSelected == true){
+	document.getElementById("snap").disabled = false;
+
+	document.getElementById("snap").addEventListener("click", function() {
 		confirmed = true;
-	contexte.drawImage(video, 0, 0, 426, 320);
-	contexte.drawImage(canvas, 0, 0, 426, 320);
-});
+		contexte.drawImage(video, 0, 0, 426, 320);
+		contexte.drawImage(canvas, 0, 0, 426, 320);
+	})
+};
 
 document.querySelector("#upload_picture").addEventListener("change", function() {
 	if (this.files.length > 0) {

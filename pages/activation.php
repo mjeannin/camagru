@@ -1,5 +1,6 @@
 <?php 
-	require_once '../inc/global.php';
+
+	include_once "{$_SERVER['DOCUMENT_ROOT']}/Camagru/inc/global.php";
 
 	$token = $_GET["token"];
 	$req = $dbh->prepare('SELECT id, pseudo FROM users WHERE token = :token');

@@ -1,5 +1,5 @@
 <?php
-require_once '../inc/global.php';
+	include_once "{$_SERVER['DOCUMENT_ROOT']}/Camagru/inc/global.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +10,7 @@ require_once '../inc/global.php';
 		<link rel="stylesheet" href="../css/index.css">
 	</head>
 	<body>
+	<div id="main">
 		<div class="header"><?php include_once '../inc/header.php'; ?></div>
 		<?php if ($user['connected'] === false): ?>
 			<p>Veuillez vous identifier pour continuer.</p>
@@ -48,9 +49,6 @@ require_once '../inc/global.php';
 									<input type="radio" name="pic" value="mask">
 							   </label>
 							</div>
-							<div>
-								<span class="pic" id="clear">#nofilter</span>
-							</div>
 					</div>
 				</div>
 				<div class="main">
@@ -61,7 +59,7 @@ require_once '../inc/global.php';
 					</div>
 
 					<div>
-						<span class="button" id="snap">Prendre une photo</span>
+						<button disabled id="snap">Prendre une photo</button>
 					</div>
 					<div>
 						<form method="post" action="/process/upload.php" enctype="multipart/form-data">
@@ -100,7 +98,8 @@ require_once '../inc/global.php';
 		<?php endif; ?>
 		<div class="footer">
 			created by @mjeannin
-		</div>     
+		</div> 
+	</div>    
 	</body>
 	<script type="text/javascript" src="/Camagru/js/ajax.js"></script>
 	<script type="text/javascript" src="/Camagru/js/camera.js"></script>
