@@ -9,14 +9,18 @@
 	} catch (PDOException $e) {
 	    die ('Connexion échouée : ' . $e->getMessage());
 	}
-	$lines = file_get_contents("../../db/camagru_db.sql");
-
-	$lines = explode(';', $lines);
+	$file = file_get_contents("../../db/camagru_db.sql");
+	$lines = explode(';', $file);
 	foreach ($lines as $line)
 	{
 		$line = trim($line);
 		if (empty($line)) continue;
-		$dbh->query(trim($line));
+		echo $line . PHP_EOL;
+		try {
+			$result = $dbh->query($line);			
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
 	}
 
 	echo "Database created\n";

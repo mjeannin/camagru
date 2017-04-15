@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS `camagru_db`;
+CREATE DATABASE `camagru_db`;
+USE `camagru_db`;
+
 DROP TABLE IF EXISTS `comm`;
 CREATE TABLE `comm` (
   `comm_id` int(11) NOT NULL AUTO_INCREMENT,
