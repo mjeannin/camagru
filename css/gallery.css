@@ -63,6 +63,8 @@ a:hover{
 }
 #comm_text{
     text-align: center;
+    max-width: 345px;
+    overflow-wrap: break-word;
 }
 #comm_date{
     text-align: left;

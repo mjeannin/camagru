@@ -75,10 +75,23 @@
 					$req->execute();
 
 					while ($photos = $req->fetch()){
+
+					$query = $dbh->prepare('SELECT pseudo FROM users WHERE id = ?');
+					$query->execute(array($photos['authorid']));
+					$author = $query->fetch();
 				?>
 			<div>
 				<div class="pic">
+					<div><?= $author['pseudo']; ?></div>
 					<img src="<?= $photos['img'] ?>" alt="ex1" border="0" height="250">
+					<?php
+						if ($commentaires['user_id'] == $_SESSION['user_id']){
+							echo '<br/>';?>
+							<div id="img_delete">
+								<a href="/Camagru/process/img_comm.php?id=<?= $photos['id'] ?>&page=<?= $_GET["page"]; ?>">
+								<img src="../img/clear.png"><a/>
+							</div>
+					<?php } ?>
 				</div>
 				<div>
 					<img <?php if(photo_is_liked($dbh, $_SESSION['user_id'], $photos['id']) == true ){?>
@@ -113,7 +126,7 @@
 								if ($commentaires['user_id'] == $_SESSION['user_id']){
 									echo '<br/>';?>
 										<div id="comm_delete">
-											<a href="/Camagru/process/del.php?id=<?= $commentaires['comm_id'] ?>&page=<?= $_GET["page"]; ?>">
+											<a href="/Camagru/process/del_comm.php?id=<?= $commentaires['comm_id'] ?>&page=<?= $_GET["page"]; ?>">
 											<img src="../img/clear.png"><a/>
 										</div>
 									<?php } ?>

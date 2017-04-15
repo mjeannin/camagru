@@ -2,7 +2,7 @@
 
 	include_once "{$_SERVER['DOCUMENT_ROOT']}/Camagru/inc/global.php";
 
-	isset($_GET["token"]){
+	if (isset($_GET["token"])){
 
 		$token = $_GET["token"];
 		$req = $dbh->prepare('SELECT id, pseudo FROM users WHERE token = :token');

@@ -86,7 +86,7 @@ apple.addEventListener('click', function () {
 	}
 	else
 		context.drawImage(this,100,100,100,100);
-
+	enableButton();
 });
 
 beer.addEventListener('click', function () {
@@ -103,7 +103,9 @@ beer.addEventListener('click', function () {
 		}
 	}
 	else
-		context.drawImage(this,200,200,100,120); 
+		context.drawImage(this,200,200,100,120);
+	enableButton();
+
 });
 
 frame.addEventListener('click', function () {
@@ -120,7 +122,8 @@ frame.addEventListener('click', function () {
 		}
 	}
 	else
-		context.drawImage(this,0,0,426,320); 
+		context.drawImage(this,0,0,426,320);
+	enableButton();
 });
 
 hand.addEventListener('click', function () {
@@ -138,6 +141,7 @@ hand.addEventListener('click', function () {
 	}
 	else
 		context.drawImage(this,275,100,150,120); 
+	enableButton();
 });
 
 mask.addEventListener('click', function () {
@@ -154,7 +158,8 @@ mask.addEventListener('click', function () {
 		}
 	}
 	else
-		context.drawImage(this,100,0,140,200); 
+		context.drawImage(this,100,0,140,200);
+	enableButton();
 });
 
 send.addEventListener('click', function (e) {
