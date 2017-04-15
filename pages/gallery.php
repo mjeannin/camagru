@@ -28,8 +28,9 @@
 					$photos = $req->fetch();
 
 					if ($page >= 1 && $photos){?>
-					<div>
-						<p class="navig" id="prev"><a href="/Camagru/pages/gallery.php?page=<?= $page; ?>">Page précédente</a></p>
+					<div class="navig" id="prev">
+						<a href="/Camagru/pages/gallery.php?page=<?= $page; ?>">
+						<img class="arrow" src="../img/previous.png"></a>
 					</div>
 				<?php }?>
 				<div>
@@ -44,8 +45,9 @@
 					$req->execute();
 					$photos = $req->fetch();
 					if ($photos){?>
-						<div>
-							<p class="navig" id="next"><a href="/Camagru/pages/gallery.php?page=<?= $page + 1; ?>">Page suivante</a></p>
+						<div class="navig" id="next">
+							<a href="/Camagru/pages/gallery.php?page=<?= $page + 1; ?>">
+							<img class="arrow" src="../img/next.png"></a>
 						</div>
 				<?php }?>
 				<?php
@@ -60,12 +62,6 @@
 					if (!$photos){?>
 						<div>
 							<p>Aucune image à afficher :(</p>
-						</div>
-				<?php }?>
-				<?php
-					if (is_int($page) == FALSE){?>
-						<div>
-							<p>Erreur d'url</p>
 						</div>
 				<?php }?>
 			</div>
@@ -104,13 +100,22 @@
 						$cmt = $dbh->prepare('SELECT comm_id, user_id, img_id, text, date FROM comm WHERE img_id = ?');
 						$cmt->execute(array($photos['id']));
 
-						while ($commentaires = $cmt->fetch()){?>
+						while ($commentaires = $cmt->fetch()){
+							$query = $dbh->prepare('SELECT pseudo FROM users WHERE id = ?');
+							$query->execute(array($commentaires['user_id']));
+
+							$author = $query->fetch();
+							?>
 							<div class="commentaires">
-								<?= ($commentaires['user_id']) ?> : <?= ($commentaires['text']).'<br/>'.($commentaires['date']); ?>
+								<div id="comm_text"><?= ($author['pseudo']) ?> : <?= ($commentaires['text'])?></div>
+								<div id="comm_date"><?= ($commentaires['date']); ?></div>
 								<?php
 								if ($commentaires['user_id'] == $_SESSION['user_id']){
 									echo '<br/>';?>
-										<a href="/Camagru/process/del.php?id=<?= $commentaires['comm_id'] ?>&page=<?= $_GET["page"]; ?>">Supprimer</a>
+										<div id="comm_delete">
+											<a href="/Camagru/process/del.php?id=<?= $commentaires['comm_id'] ?>&page=<?= $_GET["page"]; ?>">
+											<img src="../img/clear.png"><a/>
+										</div>
 									<?php } ?>
 							</div>
 						<?php } ?>

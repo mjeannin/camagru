@@ -59,6 +59,18 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 	}, errBack);
 }
 
+function enableButton(){
+	if (appleSelected == true || beerSelected == true || frameSelected == true || handSelected == true || maskSelected == true){
+		document.getElementById("snap").disabled = false;
+
+		document.getElementById("snap").addEventListener("click", function() {
+			confirmed = true;
+			contexte.drawImage(video, 0, 0, 426, 320);
+			contexte.drawImage(canvas, 0, 0, 426, 320);
+		})
+	};
+}
+
 apple.addEventListener('click', function () {
 	toggleVar('apple'); 
 	context.clearRect(0, 0, canvas.width, canvas.height);
@@ -73,7 +85,7 @@ apple.addEventListener('click', function () {
 		}
 	}
 	else
-		context.drawImage(this,100,100,100,100); 
+		context.drawImage(this,100,100,100,100);
 
 });
 
@@ -182,16 +194,6 @@ send.addEventListener('click', function (e) {
 		} 
 	}
 });
-
-if (appleSelected == true || beerSelected == true || frameSelected == true || handSelected == true || maskSelected == true){
-	document.getElementById("snap").disabled = false;
-
-	document.getElementById("snap").addEventListener("click", function() {
-		confirmed = true;
-		contexte.drawImage(video, 0, 0, 426, 320);
-		contexte.drawImage(canvas, 0, 0, 426, 320);
-	})
-};
 
 document.querySelector("#upload_picture").addEventListener("change", function() {
 	if (this.files.length > 0) {

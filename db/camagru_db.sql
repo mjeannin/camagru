@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS `comm`;
 CREATE TABLE `comm` (
-  `comm_id` int(11) NOT NULL,
+  `comm_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `img_id` int(11) NOT NULL,
   `text` varchar(255) NOT NULL,
@@ -54,6 +54,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `users` (`id`, `validation`, `token`, `pseudo`, `pass`, `email`, `date_inscription`) VALUES
-(1, 1,  'b2543abce8a222c086262a4dda237f0e92202169686566da487329fa9a420bfa95f6207336fb1781738d', 'mjeannin', '$2y$10$YvIG0KBsIi5j/HC2diLovOvb1QjjxrAxotqcXq85niKcL6iA2NP4G', 'marine.jeannin@sciencespo.fr', '2017-03-25');
+(1, 1,  'b2543abce8a222c086262a4dda237f0e92202169686566da487329fa9a420bfa95f6207336fb1781738d', 'admin',  'admin',  'admin@camagru.fr', '2017-03-25');
 
 -- 2017-04-11 18:00:31

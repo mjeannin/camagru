@@ -55,8 +55,24 @@ a:hover{
     max-height: 1000px;
     text-align: center;
     font-size: 1em;
-    margin: 35px;
+    margin: 3px;
     border: solid grey 1px;
+}
+#comm{
+    margin-bottom: 15px;
+}
+#comm_text{
+    text-align: center;
+}
+#comm_date{
+    text-align: left;
+    font-size: 0.75em;
+    margin-left: 15px;
+}
+#comm_delete{
+    text-align: right;
+    margin-right: 7px;
+    margin-top: -42px;
 }
 #main{
     display: inline-block;
@@ -73,6 +89,9 @@ a:hover{
 }
 #prev{
     text-align: left;
+}
+.arrow{
+    width: 42px;
 }
 #next{
     text-align: right;

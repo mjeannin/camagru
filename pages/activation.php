@@ -2,25 +2,31 @@
 
 	include_once "{$_SERVER['DOCUMENT_ROOT']}/Camagru/inc/global.php";
 
-	$token = $_GET["token"];
-	$req = $dbh->prepare('SELECT id, pseudo FROM users WHERE token = :token');
-	$req->execute(array(
-		    'token' => $token));
-	$resultat = $req->fetch();
+	isset($_GET["token"]){
 
-	if (!$resultat){
-		echo 'Erreur d\'identification';
-	}
-
-	else{
-		$_SESSION['user_id'] = $resultat['id'];
-		$req = $dbh->prepare('UPDATE users SET validation=1 WHERE id = :id');
+		$token = $_GET["token"];
+		$req = $dbh->prepare('SELECT id, pseudo FROM users WHERE token = :token');
 		$req->execute(array(
-		    'id' => $resultat['id']));
-		$resultat = $req->execute();
+			    'token' => $token));
+		$resultat = $req->fetch();
 
-		header("Refresh: 2;URL=main.php");
+		if (!$resultat){
+			echo 'Erreur d\'identification';
+		}
 
-		echo 'Enregistrement confirmé !<br>';
-		echo 'Vous allez être redirigé dans quelques secondes.';
+		else{
+			$_SESSION['user_id'] = $resultat['id'];
+			$req = $dbh->prepare('UPDATE users SET validation=1 WHERE id = :id');
+			$req->execute(array(
+			    'id' => $resultat['id']));
+			$resultat = $req->execute();
+
+			header("Refresh: 2;URL=main.php");
+
+			echo 'Enregistrement confirmé !<br>';
+			echo 'Vous allez être redirigé dans quelques secondes.';
+		}
+	}
+	else{
+		exit('Erreur');
 	}

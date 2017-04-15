@@ -25,7 +25,7 @@
 </head>
 <body>
         <div class="logo">
-                <a href="../pages/gallery.php"><img src="https://image.ibb.co/h1wigF/Screen_Shot_2017_02_06_at_9_59_41_PM.png" alt="logo" border="0" href="/Camagru/gallery.php"></a>
+                <a href="../pages/gallery.php"><img src="../img/elephant.png" alt="logo" border="0" href="/Camagru/gallery.php"></a>
         </div>
 	<form id= "form" action="/Camagru/process/reinit_pwd.php" method="post">
 

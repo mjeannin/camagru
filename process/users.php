@@ -59,7 +59,7 @@
 				 
 				mail($destinataire, $sujet, $message, $entete) ;
 
-				echo "Veuillez valider votre adresse email.";			 
+				echo "Veuillez valider votre adresse email.</br>";			 
 			}
 		}
 		else

@@ -1,5 +1,5 @@
 <div class="logo">
-   <a href="../pages/gallery.php"><img src="https://image.ibb.co/h1wigF/Screen_Shot_2017_02_06_at_9_59_41_PM.png" alt="logo" border="0" href="/Camagru/gallery.php"></a>
+   <a href="../pages/gallery.php"><img src="../img/elephant.png" alt="logo" border="0" href="/Camagru/gallery.php"></a>
 </div>
 <div class="name">
   <a href="../pages/gallery.php">Camagru</a>
@@ -19,7 +19,8 @@
         <p><a href="../pages/register.php">Inscription</a></p>
         <p><a href="../pages/login.php">Connexion</a></p>
 <?php else: ?>
-        <p><a href="../pages/logout.php">Déconnexion</a></p>
+        <p><a href="../pages/logout.php">
+        <img width="42" src="../img/power.png"></a></p>
 <?php endif; ?>
       </span>
   </div>
