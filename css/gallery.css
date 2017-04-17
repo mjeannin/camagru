@@ -76,6 +76,10 @@ a:hover{
     margin-right: 7px;
     margin-top: -42px;
 }
+#img_delete{
+    margin-left: -36%;
+    margin-top: -7%;
+}
 #main{
     display: inline-block;
     margin-left: auto;
@@ -100,6 +104,8 @@ a:hover{
 }
 .pic{
     margin: 10px;
+}
+.pic_img{
     border: solid black 1px;
 }
 .log{

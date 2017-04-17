@@ -82,16 +82,16 @@
 				?>
 			<div>
 				<div class="pic">
-					<div><?= $author['pseudo']; ?></div>
-					<img src="<?= $photos['img'] ?>" alt="ex1" border="0" height="250">
+					<div>
 					<?php
-						if ($commentaires['user_id'] == $_SESSION['user_id']){
+						if ($photos['authorid'] == $_SESSION['user_id']){
 							echo '<br/>';?>
-							<div id="img_delete">
-								<a href="/Camagru/process/img_comm.php?id=<?= $photos['id'] ?>&page=<?= $_GET["page"]; ?>">
-								<img src="../img/clear.png"><a/>
-							</div>
+								<a href="/Camagru/process/del_img.php?id=<?= $photos['id'] ?>&page=<?= $_GET["page"]; ?>">
+								<img id="img_delete" src="../img/clear.png"><a/>
 					<?php } ?>
+					<?= $author['pseudo']; ?>
+					</div>
+					<img class="pic_img" src="<?= $photos['img'] ?>" alt="ex1" border="0" height="250">
 				</div>
 				<div>
 					<img <?php if(photo_is_liked($dbh, $_SESSION['user_id'], $photos['id']) == true ){?>

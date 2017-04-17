@@ -58,6 +58,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO `users` (`id`, `validation`, `token`, `pseudo`, `pass`, `email`, `date_inscription`) VALUES
-(1, 1,  'b2543abce8a222c086262a4dda237f0e92202169686566da487329fa9a420bfa95f6207336fb1781738d', 'admin',  'admin',  'admin@camagru.fr', '2017-03-25');
+(2, 1, '63aac8b1b2ff978c90e62562262b0cdc3fe27124083af30822f61a6347c0a7c9cd37ca0bff1c23d71170', 'admin', '$2y$10$zEJ5dHITbU.VVpVoCsZjwO3y387Th5NVk57jw/hoskn/bjt0MTQUq', 'admin@camagru.fr', '2017-04-17');
 
 -- 2017-04-11 18:00:31

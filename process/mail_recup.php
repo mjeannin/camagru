@@ -24,7 +24,7 @@
 			echo "Mail de récupération envoyé";
 	 
 			$destinataire = $email;
-			$sujet = "Activer votre compte" ;
+			$sujet = "Réinitialiser votre mot de passe" ;
 			$headers  = 'MIME-Version: 1.0' . "\r\n";
 			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 			$headers .= 'From: Camagru <admin@camagru.fr>' ;
