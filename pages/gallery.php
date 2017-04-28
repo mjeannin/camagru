@@ -76,19 +76,19 @@
 
 					while ($photos = $req->fetch()){
 
-					$query = $dbh->prepare('SELECT pseudo FROM users WHERE id = ?');
-					$query->execute(array($photos['authorid']));
-					$author = $query->fetch();
-				?>
-			<div>
-				<div class="pic">
-					<div>
-					<?php
-						if ($photos['authorid'] == $_SESSION['user_id']){
-							echo '<br/>';?>
-								<a href="/Camagru/process/del_img.php?id=<?= $photos['id'] ?>&page=<?= $_GET["page"]; ?>">
-								<img id="img_delete" src="../img/clear.png"><a/>
-					<?php } ?>
+						$query = $dbh->prepare('SELECT pseudo FROM users WHERE id = ?');
+						$query->execute(array($photos['authorid']));
+						$author = $query->fetch();
+					?>
+				<div>
+					<div class="pic">
+						<div>
+						<?php
+							if ($photos['authorid'] == $_SESSION['user_id']){
+								echo '<br/>';?>
+									<a href="/Camagru/process/del_img.php?id=<?= $photos['id'] ?>&page=<?= $_GET["page"]; ?>">
+									<img id="img_delete" src="../img/clear.png"><a/>
+						<?php } ?>
 					<?= $author['pseudo']; ?>
 					</div>
 					<img class="pic_img" src="<?= $photos['img'] ?>" alt="ex1" border="0" height="250">
