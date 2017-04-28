@@ -34,7 +34,7 @@
 					</div>
 				<?php }?>
 				<div>
-					<p class="navig">Page <?= $page; ?></p>
+					<p class="navig">Page <?= $page+1; ?></p>
 				</div>
 				<?php
 					$page = $_GET["page"] ? $_GET["page"] : 1;
@@ -109,6 +109,7 @@
 						<input name="comment" id="comment" type="text" />
 					</form>
 				</div>
+				<center id="global_comm">
 					<?php
 						$cmt = $dbh->prepare('SELECT comm_id, user_id, img_id, text, date FROM comm WHERE img_id = ?');
 						$cmt->execute(array($photos['id']));
@@ -120,19 +121,20 @@
 							$author = $query->fetch();
 							?>
 							<div class="commentaires">
-								<div id="comm_text"><?= ($author['pseudo']) ?> : <?= ($commentaires['text'])?></div>
+								<div id="comm_text"><?= ($author['pseudo']) ?></div>
+								<div><?= ($commentaires['text'])?></div>
 								<div id="comm_date"><?= ($commentaires['date']); ?></div>
 								<?php
 								if ($commentaires['user_id'] == $_SESSION['user_id']){
 									echo '<br/>';?>
 										<div id="comm_delete">
 											<a href="/Camagru/process/del_comm.php?id=<?= $commentaires['comm_id'] ?>&page=<?= $_GET["page"]; ?>">
-											<img src="../img/clear.png"><a/>
+											<img src="../img/clear.png"></a>
 										</div>
 									<?php } ?>
 							</div>
 						<?php } ?>
-				</div>
+				</center>
 				<?php }?>
 			</div>
 		<div class="footer">created by @mjeannin</div>     
