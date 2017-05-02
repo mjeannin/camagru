@@ -15,7 +15,7 @@
 	{
 		$line = trim($line);
 		if (empty($line)) continue;
-		echo $line . PHP_EOL;
+		// echo $line . PHP_EOL;
 		try {
 			$result = $dbh->query($line);			
 		} catch (PDOException $e) {

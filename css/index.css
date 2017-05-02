@@ -16,7 +16,10 @@ body{
 div{
     border-radius: 4px;
 }
-
+#img_logo{
+    width: 229%;
+    height: auto;
+}
 a,
 a:visited{
     color: inherit;
@@ -25,26 +28,48 @@ a:visited{
 a:hover{
     text-decoration: underline;
 }
+@media all and (min-width: 960px) {
+.name, .gallery_title, .log, .new_post{
+    font-size: 50px;
+  }
+}
+
+@media all and (max-width: 959px) and (min-width: 600px) {
+.name, .gallery_title, .log, .new_post{
+    font-size: 5vw;
+  }
+}
+
+@media all and (max-width: 599px) and (min-width: 50px) {
+.name, .gallery_title, .log, .new_post{
+    font-size: 6vw;
+  }
+}
 #main{
     width: 100%;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
 }
-.logo{
-    flex: 1;
+.log{
+    flex: 2;
+    margin: 9%;
+    margin-top: 10px;
+}
+.log_text{
+    margin:15px;
 }
 .name{
     flex: 1;
     text-align: center;
     font-size: 2em;
-    margin: 7%;
+    margin-left: 14%;
     margin-top: 52px;
 }
 .log{
     flex: 2;
-    margin: 7%;
-    margin-top: 25px;
+    margin: 9%;
+    margin-top: 5px;
 }
 
 .header {
@@ -132,5 +157,5 @@ a:hover{
     text-align: center;
     font-size: 1.4em;
     margin: 7%;
-    margin-top: 18px;
+    margin-top: 28px;
 }

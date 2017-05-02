@@ -1,5 +1,5 @@
 <div class="logo">
-   <a href="../pages/gallery.php"><img src="../img/elephant.png" alt="logo" border="0" href="/Camagru/gallery.php"></a>
+   <a href="../pages/gallery.php"><img id="img_logo" src="../img/elephant.png" alt="logo" border="0" href="/Camagru/gallery.php"></a>
 </div>
 <div class="name">
   <a href="../pages/gallery.php">Camagru</a>
@@ -16,10 +16,10 @@
   <div class="log">
       <span>
 <?php if ($user['connected'] === false): ?>
-        <p><a href="../pages/register.php">Inscription</a></p>
-        <p><a href="../pages/login.php">Connexion</a></p>
+        <p class="log_text"><a href="../pages/register.php">Inscription</a></p>
+        <p class="log_text"><a href="../pages/login.php">Connexion</a></p>
 <?php else: ?>
-        <p><a href="../pages/logout.php">
+        <p class="log_text"><a href="../pages/logout.php">
         <img width="42" src="../img/power.png"></a></p>
 <?php endif; ?>
       </span>
